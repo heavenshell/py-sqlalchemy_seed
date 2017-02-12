@@ -26,6 +26,8 @@ Adding seed
     /fixtures
       accounts.yaml
 
+Model file.
+
 .. code:: python
 
   # -*- coding: utf-8 -*-
@@ -49,6 +51,9 @@ Adding seed
       last_name = Column(String(100), nullable=False)
       age = Column(Integer(), nullable=True)
 
+
+Seed code.
+
 .. code:: python
 
   # -*- coding: utf-8 -*-
@@ -71,6 +76,7 @@ Adding seed
   if __name__ == '__main__':
       main()
 
+Seed file.
 
 .. code::
 
@@ -80,9 +86,14 @@ Adding seed
       first_name: John
       last_name: Lennon
       age: 20
+
   - model: myapp.models.Account
     id: 2
     fields:
       first_name: Paul
       last_name: McCartney
       age: 21
+
+LICENSE
+=======
+NEW BSD LICENSE.
