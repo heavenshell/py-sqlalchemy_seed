@@ -3,8 +3,8 @@
     sqlalchemy_seed
     ~~~~~~~~~~~~~~~
 
-    Seed
-
+    `sqlalchemy_seed` is a seed library which provides initial data to
+    database using SQLAlchemy.
 
     :copyright: (c) 2017 Shinya Ohyanagi, All rights reserved.
     :license: BSD, see LICENSE for more details.
@@ -13,6 +13,8 @@ import os
 import importlib
 import json
 import yaml
+
+__version__ = '0.1.0'
 
 
 def create_table(base, session=None):
