@@ -1,6 +1,9 @@
 sqlalchemy_seed
 ----------------
 
+.. image:: https://travis-ci.org/heavenshell/py-sqlalchemy_seed.svg?branch=master
+    :target: https://travis-ci.org/heavenshell/py-sqlalchemy_seed
+
 `sqlalchemy_seed` is a seed library which provides initial data to database using SQLAlchemy.
 
 `sqlalchemy_seed` is similar to `Django fixtures <https://docs.djangoproject.com/ja/1.10/howto/initial-data/>`_.
