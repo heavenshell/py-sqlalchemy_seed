@@ -12,7 +12,7 @@
 import os
 from setuptools import setup, find_packages
 
-requires = ['sqlalchemy', 'pyyaml']
+requires = ['sqlalchemy', 'pyyaml', 'flake8']
 
 rst_path = os.path.join(os.path.dirname(__file__), 'README.rst')
 description = ''

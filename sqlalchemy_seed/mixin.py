@@ -9,7 +9,6 @@
     :copyright: (c) 2017 Shinya Ohyanagi, All rights reserved.
     :license: BSD, see LICENSE for more details.
 """
-import os
 from . import (
     create_table,
     drop_table,
