@@ -54,9 +54,12 @@ class Picture(Base):
     account_id = Column(Integer, ForeignKey('accounts.id'))
     image = Column(String(120), unique=True)
 
-    account = relationship('Account', backref='images',
-                           primaryjoin='Account.id==Picture.account_id',
-                           lazy='joined')
+    account = relationship(
+        'Account',
+        backref='images',
+        primaryjoin='Account.id==Picture.account_id',
+        lazy='joined',
+    )
 
     def __init__(self, account_id=None, image=None):
         self.account_id = account_id
@@ -64,7 +67,9 @@ class Picture(Base):
 
     def __repr__(self):
         return 'Picture(id={0}, account_id={1}, image={2})'.format(
-            self.id, self.account, self.image
+            self.id,
+            self.account,
+            self.image,
         )
 
 

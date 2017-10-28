@@ -101,6 +101,6 @@ def load_fixtures(session, fixtures):
         session.add_all(instances)
         session.flush()
         session.commit()
-    except:
+    except Exception:
         session.rollback()
         raise
