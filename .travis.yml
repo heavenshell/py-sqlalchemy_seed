@@ -4,11 +4,8 @@ python:
   - 2.7
   - 3.6
 
-before_install:
-  - pip install -r requirements.txt
-
 before_script:
-  - 'flake8 --verbose --jobs=8'
+  - flake8 --verbose --jobs=8
 
 script:
   - python setup.py test
