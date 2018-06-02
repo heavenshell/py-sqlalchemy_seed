@@ -30,7 +30,7 @@ setup(
     long_description=description,
     license='BSD',
     platforms='any',
-    packages=find_packages(exclude=['tests']),
+    packages=find_packages(exclude=('tests',)),
     package_dir={'': '.'},
     install_requires=requires,
     classifiers=[

@@ -1,6 +1,16 @@
-include LICENSE README.rst
-recursive-include docs *
-recursive-exclude docs *.pyc
-recursive-exclude docs *.pyo
-recursive-exclude tests *.pyc
-recursive-exclude tests *.pyo
+graft sqlalchemy_seed
+
+include LICENSE
+include README.rst
+include setup.cfg
+include setup.py
+
+exclude .pyup.yml
+exclude .travis.yml
+exclude requirements.txt
+exclude tox.ini
+
+global-exclude __pycache__
+global-exclude *.py[co]
+
+prune tests
