@@ -42,6 +42,7 @@ class Account(Base):
     age = Column(Integer(), nullable=True)
 
     def __repr__(self):
+        """Repr."""
         return 'Account(id={0}, first_name={1}, last_name={2}, age={3})'.format(
             self.id, self.first_name, self.last_name, self.age,
         )
@@ -66,6 +67,7 @@ class Picture(Base):
         self.image = image
 
     def __repr__(self):
+        """Repr."""
         return 'Picture(id={0}, account_id={1}, image={2})'.format(
             self.id,
             self.account,
