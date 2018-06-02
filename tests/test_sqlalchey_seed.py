@@ -13,15 +13,15 @@
 import os
 from unittest import TestCase
 
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy import Column, create_engine, ForeignKey, Integer, String
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import scoped_session, sessionmaker, relationship
+from sqlalchemy.orm import relationship, scoped_session, sessionmaker
 from sqlalchemy_seed import (
     create_table,
     drop_table,
-    load_fixtures,
     load_fixture_files,
+    load_fixtures,
 )
 from sqlalchemy_seed.mixin import SeedMixin
 
@@ -42,6 +42,7 @@ class Account(Base):
     age = Column(Integer(), nullable=True)
 
     def __repr__(self):
+        """Repr."""
         return 'Account(id={0}, first_name={1}, last_name={2}, age={3})'.format(
             self.id, self.first_name, self.last_name, self.age,
         )
@@ -66,6 +67,7 @@ class Picture(Base):
         self.image = image
 
     def __repr__(self):
+        """Repr."""
         return 'Picture(id={0}, account_id={1}, image={2})'.format(
             self.id,
             self.account,

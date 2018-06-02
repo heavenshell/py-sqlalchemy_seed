@@ -9,9 +9,10 @@
     :copyright: (c) 2017 Shinya Ohyanagi, All rights reserved.
     :license: BSD, see LICENSE for more details.
 """
-import os
 import importlib
 import json
+import os
+
 import yaml
 
 __version__ = '0.1.1'

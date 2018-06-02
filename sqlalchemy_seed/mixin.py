@@ -12,8 +12,8 @@
 from . import (
     create_table,
     drop_table,
-    load_fixtures,
     load_fixture_files,
+    load_fixtures,
 )
 
 
