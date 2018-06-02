@@ -13,15 +13,15 @@
 import os
 from unittest import TestCase
 
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy import Column, create_engine, ForeignKey, Integer, String
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import scoped_session, sessionmaker, relationship
+from sqlalchemy.orm import relationship, scoped_session, sessionmaker
 from sqlalchemy_seed import (
     create_table,
     drop_table,
-    load_fixtures,
     load_fixture_files,
+    load_fixtures,
 )
 from sqlalchemy_seed.mixin import SeedMixin
 

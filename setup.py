@@ -10,7 +10,8 @@
     :license: BSD, see LICENSE for more details.
 """
 import os
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 requires = ['sqlalchemy', 'pyyaml', 'flake8']
 
