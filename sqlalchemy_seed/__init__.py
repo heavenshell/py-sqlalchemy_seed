@@ -63,7 +63,7 @@ def load_fixture_files(paths, files):
 
             with open(fixture_path, 'r') as f:
                 if file.endswith('.yaml') or file.endswith('.yml'):
-                    data = yaml.load(f, loader=Loader)
+                    data = yaml.load(f, Loader=Loader)
                 elif file.endswith('.json'):
                     data = json.loads(f)
                 else:
