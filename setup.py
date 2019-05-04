@@ -22,7 +22,7 @@ with open(rst_path) as f:
 
 setup(
     name='sqlalchemy_seed',
-    version='0.1.2',
+    version='0.2.0',
     author='Shinya Ohyanagi',
     author_email='sohyanagi@gmail.com',
     url='http://github.com/heavenshell/py-sqlalchemy_seed',
