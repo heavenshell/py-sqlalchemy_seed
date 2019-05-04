@@ -14,6 +14,10 @@ import json
 import os
 
 import yaml
+try:
+    from yaml import CLoader as Loader
+except ImportError:
+    from yaml import Loader
 
 __version__ = '0.1.1'
 
@@ -59,7 +63,7 @@ def load_fixture_files(paths, files):
 
             with open(fixture_path, 'r') as f:
                 if file.endswith('.yaml') or file.endswith('.yml'):
-                    data = yaml.load(f)
+                    data = yaml.load(f, Loader=Loader)
                 elif file.endswith('.json'):
                     data = json.loads(f)
                 else:
