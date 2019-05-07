@@ -45,7 +45,7 @@ class SeedMixin(object):
             cls._create_fixtures(cls)
 
     @classmethod
-    def teatDownClass(cls):
+    def tearDownClass(cls):
         if cls.fixtures_setup_class is True:
             cls._drop_fixtures(cls)
 
