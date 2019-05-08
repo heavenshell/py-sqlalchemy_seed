@@ -103,7 +103,8 @@ def load_fixtures(session, fixtures):
             instances.append(instance)
 
     try:
-        session.add_all(instances)
+        for instance in instances:
+            session.merge(instance)
         session.flush()
         session.commit()
     except Exception:
