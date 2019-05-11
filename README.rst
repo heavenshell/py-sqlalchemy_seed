@@ -100,6 +100,30 @@ Seed file.
       last_name: McCartney
       age: 21
 
+
+Update seed
+===========
+
+If you want idempotent, you can describe seed like followings.
+
+Seed file.
+
+.. code::
+
+  - model: myapp.models.Account
+    fields:
+      id: 1
+      first_name: John
+      last_name: Lennon
+      age: 20
+
+  - model: myapp.models.Account
+    fields:
+      id: 2
+      first_name: Paul
+      last_name: McCartney
+      age: 21
+
 LICENSE
 =======
 NEW BSD LICENSE.
