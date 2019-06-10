@@ -90,6 +90,20 @@ def _create_model_instance(fixture):
     return instances
 
 
+def _create_table_object_data(fixture):
+    """Create a Table object entry.
+
+    :param fixture: Fixtures
+    """
+    for data in fixture:
+        if 'table' in data:
+            module_name, class_name = data['table'].rsplit('.', 1)
+            module = importlib.import_module(module_name)
+            table = db.metadata.tables[class_name]
+            insert = table.insert()
+            session.execute(insert.values(**data['fields']))
+
+
 def load_fixtures(session, fixtures):
     """Load fixture.
 
@@ -99,6 +113,7 @@ def load_fixtures(session, fixtures):
     instances = []
     for fixture in fixtures:
         _instances = _create_model_instance(fixture)
+        _create_table_object_data(fixture)
         for instance in _instances:
             instances.append(instance)
 
