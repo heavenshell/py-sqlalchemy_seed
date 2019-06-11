@@ -1,0 +1,9 @@
+- model: tests.test_sqlalchey_seed.PictureCategory
+  id: 1
+  fields:
+    name: Category1
+- model: tests.test_sqlalchey_seed.PictureCategory
+  id: 2
+  fields:
+    name: Category2
+

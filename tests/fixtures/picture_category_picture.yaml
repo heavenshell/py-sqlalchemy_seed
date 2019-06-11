@@ -1,0 +1,12 @@
+- table: tests.test_sqlalchey_seed.picture_category_picture
+  id: 1
+  fields:
+    picture_id: 1
+    picture_category_id: 1
+
+- table: tests.test_sqlalchey_seed.picture_category_picture
+  id: 2
+  fields:
+    picture_id: 1
+    picture_category_id: 2
+
