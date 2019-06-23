@@ -14,7 +14,6 @@ import json
 import os
 
 import yaml
-
 from sqlalchemy import MetaData
 
 try:
