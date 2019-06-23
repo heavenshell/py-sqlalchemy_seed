@@ -101,7 +101,7 @@ def _create_table_object_data(fixture, session):
         if 'table' in data:
             module_name, class_name = data['table'].rsplit('.', 1)
             importlib.import_module(module_name)
-            metadata = MetaData(session.get_bind(), reflect=True)
+            metadata = MetaData(session.get_bind()).reflect()
             table = metadata.tables[class_name]
             insert = table.insert()
             session.execute(insert.values(**data['fields']))
