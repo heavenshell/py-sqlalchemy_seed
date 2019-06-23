@@ -13,9 +13,10 @@ import importlib
 import json
 import os
 
+import yaml
+
 from sqlalchemy import MetaData
 
-import yaml
 try:
     from yaml import CLoader as Loader
 except ImportError:
