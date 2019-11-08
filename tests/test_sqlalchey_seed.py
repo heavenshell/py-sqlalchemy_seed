@@ -102,10 +102,32 @@ class TestFixtures(TestCase):
 
         drop_table(Base, session)
 
+    def test_load_json_fixture(self):
+        create_table(Base)
+        fixtures = load_fixture_files(self.path, ['accounts.json'])
+        load_fixtures(session, fixtures)
+        accounts = session.query(Account).all()
+        self.assertEqual(len(accounts), 2)
+
+        drop_table(Base, session)
+
     def test_load_fixtures(self):
         create_table(Base)
         fixtures = load_fixture_files(
             self.path, ['accounts.yaml', 'pictures.yaml'],
+        )
+        load_fixtures(session, fixtures)
+        accounts = session.query(Account).all()
+        self.assertEqual(len(accounts), 2)
+        pictures = session.query(Picture).all()
+        self.assertEqual(len(pictures), 4)
+
+        drop_table(Base, session)
+
+    def test_load_json_fixtures(self):
+        create_table(Base)
+        fixtures = load_fixture_files(
+            self.path, ['accounts.json', 'pictures.json'],
         )
         load_fixtures(session, fixtures)
         accounts = session.query(Account).all()

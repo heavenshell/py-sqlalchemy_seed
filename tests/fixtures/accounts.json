@@ -1,0 +1,20 @@
+[
+  {
+    "model": "tests.test_sqlalchey_seed.Account",
+    "id": 1,
+    "fields": {
+      "first_name": "John",
+      "last_name": "Lennon",
+      "age": 20
+    }
+  },
+  {
+    "model": "tests.test_sqlalchey_seed.Account",
+    "id": 2,
+    "fields": {
+      "first_name": "Paul",
+      "last_name": "McCartney",
+      "age": 21
+    }
+  }
+]
