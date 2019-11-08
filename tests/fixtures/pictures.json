@@ -1,0 +1,33 @@
+[
+  {
+    "model": "tests.test_sqlalchey_seed.Picture",
+    "id": 1,
+    "fields": {
+      "account_id": 1,
+      "image": "cat.jpg"
+    }
+  },
+  {
+    "model": "tests.test_sqlalchey_seed.Picture",
+    "id": 2,
+    "fields": {
+      "account_id": 1,
+      "image": "dog.jpg"
+    }
+  },
+  {
+    "model": "tests.test_sqlalchey_seed.Picture",
+    "id": 3,
+    "fields": {
+      "account_id": 2
+    }
+  },
+  {
+    "model": "tests.test_sqlalchey_seed.Picture",
+    "id": 4,
+    "fields": {
+      "account_id": 2,
+      "image": "ham.jpg"
+    }
+  }
+]
