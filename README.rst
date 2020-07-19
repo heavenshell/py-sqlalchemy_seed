@@ -2,7 +2,7 @@ sqlalchemy_seed
 ----------------
 
 .. image:: https://github.com/heavenshell/py-sqlalchemy_seed/workflows/build/badge.svg
-     :target: https://github.com/heavenshell/ts-lehre/workflows/build/
+     :target: https://github.com/heavenshell/py-sqlalchemy_seed/actions?query=workflow%3Abuild
 .. image:: https://pyup.io/repos/github/heavenshell/py-sqlalchemy_seed/python-3-shield.svg
      :target: https://pyup.io/repos/github/heavenshell/py-sqlalchemy_seed/
      :alt: Python 3
