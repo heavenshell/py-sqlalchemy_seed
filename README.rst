@@ -1,8 +1,8 @@
 sqlalchemy_seed
 ----------------
 
-.. image:: https://travis-ci.org/heavenshell/py-sqlalchemy_seed.svg?branch=master
-    :target: https://travis-ci.org/heavenshell/py-sqlalchemy_seed
+.. image:: https://github.com/heavenshell/ts-lehre/workflows/build/badge.svg
+     :target: https://github.com/heavenshell/ts-lehre/workflows/build/
 .. image:: https://pyup.io/repos/github/heavenshell/py-sqlalchemy_seed/python-3-shield.svg
      :target: https://pyup.io/repos/github/heavenshell/py-sqlalchemy_seed/
      :alt: Python 3
