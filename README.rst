@@ -1,7 +1,7 @@
 sqlalchemy_seed
 ----------------
 
-.. image:: https://github.com/heavenshell/ts-lehre/workflows/build/badge.svg
+.. image:: https://github.com/heavenshell/py-sqlalchemy_seed/workflows/build/badge.svg
      :target: https://github.com/heavenshell/ts-lehre/workflows/build/
 .. image:: https://pyup.io/repos/github/heavenshell/py-sqlalchemy_seed/python-3-shield.svg
      :target: https://pyup.io/repos/github/heavenshell/py-sqlalchemy_seed/
