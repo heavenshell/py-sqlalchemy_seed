@@ -14,6 +14,8 @@ import json
 import os
 
 import yaml
+from sqlalchemy import MetaData
+
 try:
     from yaml import CLoader as Loader
 except ImportError:
@@ -90,6 +92,22 @@ def _create_model_instance(fixture):
     return instances
 
 
+def _create_table_object_data(fixture, session):
+    """Create a Table object entry.
+
+    :param fixture: Fixtures
+    """
+    for data in fixture:
+        if 'table' in data:
+            module_name, class_name = data['table'].rsplit('.', 1)
+            importlib.import_module(module_name)
+            metadata = MetaData()
+            metadata.reflect(bind=session.get_bind())
+            table = metadata.tables[class_name]
+            insert = table.insert()
+            session.execute(insert.values(**data['fields']))
+
+
 def load_fixtures(session, fixtures):
     """Load fixture.
 
@@ -99,6 +117,7 @@ def load_fixtures(session, fixtures):
     instances = []
     for fixture in fixtures:
         _instances = _create_model_instance(fixture)
+        _create_table_object_data(fixture, session)
         for instance in _instances:
             instances.append(instance)
 

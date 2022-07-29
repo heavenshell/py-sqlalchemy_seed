@@ -13,7 +13,7 @@
 import os
 from unittest import TestCase
 
-from sqlalchemy import Column, create_engine, ForeignKey, Integer, String
+from sqlalchemy import Column, create_engine, ForeignKey, Integer, String, Table
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, scoped_session, sessionmaker
@@ -75,6 +75,28 @@ class Picture(Base):
         )
 
 
+class PictureCategory(Base):
+    __tablename__ = 'picture_category'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(120))
+
+    def __repr__(self):
+        """Repr."""
+        return 'PictureCategory(id={0}, name={1})'.format(
+            self.id,
+            self.name,
+        )
+
+
+picture_category_picture = Table(
+    'picture_category_picture',
+    Base.metadata,
+    Column('picture_id', Integer, ForeignKey('pictures.id')),
+    Column('picture_category_id', Integer, ForeignKey('picture_category.id')),
+)
+
+
 class TestFixtures(TestCase):
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'fixtures')
 
@@ -114,13 +136,17 @@ class TestFixtures(TestCase):
     def test_load_fixtures(self):
         create_table(Base)
         fixtures = load_fixture_files(
-            self.path, ['accounts.yaml', 'pictures.yaml'],
+            self.path, ['accounts.yaml', 'pictures.yaml', 'picture_categories.yaml', 'picture_category_picture.yaml'],
         )
         load_fixtures(session, fixtures)
         accounts = session.query(Account).all()
         self.assertEqual(len(accounts), 2)
         pictures = session.query(Picture).all()
         self.assertEqual(len(pictures), 4)
+        picture_categories = session.query(PictureCategory).all()
+        self.assertEqual(len(picture_categories), 2)
+        category_rels = session.query(picture_category_picture).all()
+        self.assertEqual(len(category_rels), 2)
 
         drop_table(Base, session)
 
